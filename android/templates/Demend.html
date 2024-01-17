@@ -1,0 +1,370 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Андроид разработчик</title>
+    <link rel="stylesheet" href="{% static "css/styles.css" %}">
+</head>
+<body>
+<header>
+    <div class="name">
+        <p style="margin-top: 50px">Андроид разработчик</p>
+        <img class="logo" src="{% static 'images/logotip.png' %}">
+    </div>
+</header>
+<main>
+    <div class="body">
+        <div class="navigation">
+            <nav>
+                <ul>
+                    <li><div><a href="/">Главная</a></div></li>
+                    <li><div style="border-radius: 50px;background: rgba(22, 81, 159, 0.50); justify-content: center"><a style="color: #F07E74 !important; margin-left: 0" href={% url 'demend' %}>Востребованность</a></div></li>
+                    <li><div><a href={% url 'geography' %}>География</a></div></li>
+                    <li><div><a href={% url 'skills' %}>Навыки</a></div></li>
+                    <li><div><a href={% url 'lastVacancy' %}>Последние вакансии</a></div></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="home_text" style="top: 200px">
+            <img class="demand_graph_1" src="{% static 'images/1.png' %}"/>
+            <img class="demand_graph_2" src="{% static 'images/2.png' %}"/>
+            <div class="tables">
+                <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Количество вакансий - android</th>
+    </tr>
+    <tr>
+      <th>Год</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2009</th>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>50</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>140</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>236</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>329</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>514</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>728</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>969</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>1045</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>1214</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>1200</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>1386</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>1738</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>1476</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>623</td>
+    </tr>
+  </tbody>
+</table>
+                <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Количество вакансий</th>
+    </tr>
+    <tr>
+      <th>Год</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005</th>
+      <td>1836</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>16229</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>24000</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>30627</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>20989</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>31930</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>42282</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>49309</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>68149</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>75828</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>78934</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>85740</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>95811</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>149308</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>130763</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>144137</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>216284</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>212675</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>142752</td>
+    </tr>
+  </tbody>
+</table>
+               <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Средняя зарплата - android</th>
+    </tr>
+    <tr>
+      <th>Год</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2009</th>
+      <td>221740</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>80879</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>121262</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>82056</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>90400</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>92360</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>107862</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>115728</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>113951</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>118824</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>137203</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>168729</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>170128</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>206728</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>209328</td>
+    </tr>
+  </tbody>
+</table>
+               <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Средняя зарплата</th>
+    </tr>
+    <tr>
+      <th>Год</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2005</th>
+      <td>141868</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>141839</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>153358</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>111437</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>62682</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>55293</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>59899</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>56781</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>62468</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>55844</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>55780</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>66745</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>66673</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>76127</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>77138</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>78032</td>
+    </tr>
+    <tr>
+      <th>2021</th>
+      <td>143783</td>
+    </tr>
+    <tr>
+      <th>2022</th>
+      <td>99201</td>
+    </tr>
+    <tr>
+      <th>2023</th>
+      <td>98585</td>
+    </tr>
+  </tbody>
+</table>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <p style="left: 2.5%;">Невструев Роман Олегович АТ-15</p>
+</footer>
+</body>
+</html>
