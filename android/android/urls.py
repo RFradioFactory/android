@@ -1,10 +1,14 @@
-from django.urls import path
-from my_analytics.views import *
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
-    path('', home_page, name='main'),
-    path('relevance', demand_page, name='relevance'),
-    path('location', geography_page, name='location'),
-    path('abilities', skills_page, name='abilities'),
-    path('hh', last_vacancy_page, name='hh'),
+    path('admin/', admin.site.urls),
+    path('', include('my_analytics.urls')),
 ]
+
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
