@@ -4,52 +4,63 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Андроид разработчик</title>
-    <link rel="stylesheet" href="{% static "css/styles.css" %}">
-</head>
-<body>
-<header>
-    <div class="name">
-        <p style="margin-top: 50px">Андроид разработчик</p>
-        <img class="logo" src="{% static 'images/logotip.png' %}">
-    </div>
-</header>
-<main>
-    <div class="body">
+    {% for nav in navigation %}
+
+        <title>{{ nav.role_name }}</title>
+        <link rel="stylesheet" href="{% static "css/styles.css" %}">
+        </head>
+        <body style="height: 125%;">
+        <header>
+            <div class="name">
+                <p style="margin-top: 50px">{{ nav.role_name }}</p>
+                <img class="logo" src="{{ nav.business_logo.url }}">
+            </div>
+        </header>
+        <main>
+        <div class="body">
         <div class="navigation">
             <nav>
                 <ul>
-                    <li><div><a href="/">Главная</a></div></li>
-                    <li><div><a href={% url 'relevance' %}>Востребованность</a></div></li>
-                    <li><div><a href={% url 'location' %}>География</a></div></li>
-                    <li><div style="border-radius: 50px;background: rgba(22, 81, 159, 0.50); justify-content: center"><a style="color: #F07E74 !important; margin-left: 0" href={% url 'abilities' %}>Навыки</a></div></li>
-                    <li><div><a href={% url 'hh' %}>Последние вакансии</a></div></li>
+                    <li>
+                        <div><a href="/">{{ nav.first_item }}</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'relevance' %}>{{ nav.second_item }}</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'location' %}>{{ nav.third_item }}</a></div>
+                    </li>
+                    <li>
+                        <div style="border-radius: 50px;background: rgba(22, 81, 159, 0.50); justify-content: center"><a
+                                style="color: #F07E74 !important; margin-left: 0"
+                                href={% url 'abilities' %}>{{ nav.fourth_item }}</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'hh' %}>{{ nav.fifth_item }}</a></div>
+                    </li>
                 </ul>
             </nav>
         </div>
-        <div class="home_text" style="top: 200px">
-            <h1>Топ-20 навыков по годам</h1>
+    {% endfor %}
+
+    <div class="home_text" style="margin-top: 20px;">
+        {% for data in context %}
+            <h1>{{ data.table_name }}</h1>
             <div class="tables_skills">
-                <table border='1'>
-<tr><th>Год</th><th>Android</th><th>Java</th><th>Android SDK</th><th>Kotlin</th><th>Git</th><th>ООП</th><th>iOS</th><th>Английский язык</th><th>MVVM</th><th>RxJava</th><th>SQLite</th><th>REST</th><th>Java SE</th><th>SQL</th><th>kotlin</th><th>Retrofit</th><th>MVP</th><th>Atlassian Jira</th><th>C#</th><th>C++</th></tr>
-<tr><td>2015</td><td>508</td><td>249</td><td>419</td><td>0</td><td>126</td><td>275</td><td>187</td><td>15</td><td>16</td><td>0</td><td>136</td><td>33</td><td>4</td><td>12</td><td>0</td><td>0</td><td>0</td><td>3</td><td>46</td><td>51</td></tr>
-<tr><td>2016</td><td>1201</td><td>867</td><td>667</td><td>15</td><td>513</td><td>296</td><td>231</td><td>34</td><td>46</td><td>26</td><td>118</td><td>84</td><td>17</td><td>70</td><td>0</td><td>3</td><td>4</td><td>48</td><td>121</td><td>103</td></tr>
-<tr><td>2017</td><td>1423</td><td>1177</td><td>857</td><td>110</td><td>530</td><td>362</td><td>234</td><td>37</td><td>15</td><td>62</td><td>114</td><td>123</td><td>23</td><td>105</td><td>33</td><td>40</td><td>24</td><td>77</td><td>140</td><td>108</td></tr>
-<tr><td>2018</td><td>2034</td><td>1808</td><td>1221</td><td>515</td><td>853</td><td>533</td><td>331</td><td>108</td><td>73</td><td>181</td><td>127</td><td>199</td><td>28</td><td>157</td><td>92</td><td>78</td><td>59</td><td>72</td><td>214</td><td>123</td></tr>
-<tr><td>2019</td><td>2814</td><td>2451</td><td>1739</td><td>1303</td><td>1036</td><td>593</td><td>314</td><td>174</td><td>103</td><td>206</td><td>189</td><td>281</td><td>185</td><td>196</td><td>191</td><td>109</td><td>99</td><td>117</td><td>179</td><td>215</td></tr>
-<tr><td>2020</td><td>4565</td><td>3696</td><td>2941</td><td>2137</td><td>2058</td><td>1063</td><td>532</td><td>375</td><td>200</td><td>258</td><td>374</td><td>398</td><td>805</td><td>344</td><td>332</td><td>124</td><td>181</td><td>249</td><td>179</td><td>213</td></tr>
-<tr><td>2021</td><td>6869</td><td>5366</td><td>4642</td><td>4702</td><td>3289</td><td>1547</td><td>507</td><td>972</td><td>635</td><td>551</td><td>494</td><td>485</td><td>790</td><td>481</td><td>610</td><td>417</td><td>414</td><td>381</td><td>206</td><td>169</td></tr>
-<tr><td>2022</td><td>5217</td><td>4077</td><td>3583</td><td>5032</td><td>2631</td><td>1365</td><td>342</td><td>695</td><td>796</td><td>719</td><td>331</td><td>275</td><td>127</td><td>336</td><td>298</td><td>468</td><td>447</td><td>215</td><td>120</td><td>121</td></tr>
-<tr><td>2023</td><td>2797</td><td>1838</td><td>1814</td><td>2844</td><td>1105</td><td>572</td><td>173</td><td>232</td><td>585</td><td>427</td><td>175</td><td>156</td><td>41</td><td>159</td><td>153</td><td>255</td><td>266</td><td>98</td><td>35</td><td>92</td></tr>
-</table>
+                {{ data.data_table|safe }}
             </div>
-            <img class="skills_graph" src={% static "images/skills_graph.png" %}/>
+            <img class="skills_graph" src={{ data.abilities_chart.url }}/>
             <div class="empty_skills"></div>
-        </div>
+        {% endfor %}
     </div>
-</main>
-<footer>
-    <p style="left: 2.5%;">Невструев Роман Олегович АТ-15</p>
-</footer>
-</body>
+    </div>
+    </main>
+    <footer>
+        {% for nav in navigation %}
+            <p style="left: 2.5%;">{{ nav.creator }}</p>
+        {% endfor %}
+
+    </footer>
+    </body>
 </html>
