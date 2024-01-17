@@ -4,35 +4,53 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Андроид разработчик</title>
-    <link rel="stylesheet" href="{% static "css/styles.css" %}">
-</head>
-<body>
-<header>
-    <div class="name">
-        <p style="margin-top: 50px">Андроид разработчик</p>
-        <img class="logo" src="{% static 'images/logotip.png' %}">
-    </div>
-</header>
-<main>
-    <div class="body">
+    {% for nav in navigation %}
+
+        <title>{{ nav.role_name }}</title>
+        <link rel="stylesheet" href="{% static "css/styles.css" %}">
+        </head>
+        <body style="height: 125%;">
+        <header>
+            <div class="name">
+                <p style="margin-top: 50px">{{ nav.role_name }}</p>
+                <img class="logo" src="{{ nav.business_logo.url }}">
+            </div>
+        </header>
+        <main>
+        <div class="body">
         <div class="navigation">
             <nav>
                 <ul>
-                    <li><div><a href="/">Главная</a></div></li>
-                    <li><div><a href={% url 'relevance' %}>Востребованность</a></div></li>
-                    <li><div><a href={% url 'location' %}>География</a></div></li>
-                    <li><div><a href={% url 'abilities' %}>Навыки</a></div></li>
-                    <li><div style="border-radius: 50px;background: rgba(22, 81, 159, 0.50); justify-content: center"><a style="color: #F07E74 !important; margin-left: 0" href={% url 'hh' %}>Последние вакансии</a></div></li>
+                    <li>
+                        <div><a href="/">{{ nav.first_item }}</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'relevance' %}>{{ nav.second_item }}</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'location' %}>{{ nav.third_item }}</a></div>
+                    </li>
+                    <li>
+                        <div><a href={% url 'abilities' %}>{{ nav.fourth_item }}</a></div>
+                    </li>
+                    <li>
+                        <div style="border-radius: 50px;background: rgba(22, 81, 159, 0.50); justify-content: center"><a style="color: #F07E74 !important; margin-left: 0" href={% url 'hh' %}>{{ nav.fifth_item }}</a></div>
+                    </li>
                 </ul>
             </nav>
         </div>
-        <div class="home_text">
-            <h1>Последние вакансии</h1>
+    {% endfor %}
+
+    <div class="home_text">
+        {% for data in last_vacancies%}
+
+            <h1>{{ data.role_name }}</h1>
             <div class="empty_skills"></div>
-        </div>
-        <div class="LVtable">
-            {% for i in vacs %}
+        {% endfor %}
+    </div>
+    <div class="LVtable" style="margin-left: 100px">
+        {% for i in vacs %}
             <h3>{{ i.name }}</h3>
             <p>Описание: {{ i.description }}</p>
             <p>Навыки: {{ i.key_skills }}</p>
@@ -42,11 +60,14 @@
             <p>Дата публикации: {{ i.published_at }}</p>
             <p>Ссылка: {{ i.alternate_url }}</p>
         {% endfor %}
-        </div>
     </div>
-</main>
-<footer>
-    <p style="left: 2.5%;">Невструев Роман Олегович АТ-15</p>
-</footer>
-</body>
+    </div>
+    </main>
+    <footer>
+        {% for nav in navigation %}
+        <p style="left: 2.5%;">{{ nav.creator }}</p>
+            {% endfor %}
+
+    </footer>
+    </body>
 </html>
