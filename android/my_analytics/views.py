@@ -1,6 +1,6 @@
 from datetime import datetime
 from django.shortcuts import render
-from models import *
+from .models import *
 
 
 class PageRenderer:
